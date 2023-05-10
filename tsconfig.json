@@ -2,8 +2,9 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "ES2022",
+    "lib": ["esnext", "dom"],
     "noEmitOnError": true,
-    "strict": true,
+    "strict": true
   },
 
   "files": [

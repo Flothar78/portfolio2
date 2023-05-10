@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "node": "^20.1.0",
     "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
   }
 }

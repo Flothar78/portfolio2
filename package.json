@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "typescript": "^5.0.4"
-  },
   "dependencies": {
     "sass": "^1.62.1"
   }

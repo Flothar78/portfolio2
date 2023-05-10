@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2022",
+    "noEmitOnError": true,
+    "strict": true,
+  },
+
+  "files": [
+    "/home/flothar78/Developpement/portfolio_try/portfolio/src/portfolio.ts"
+  ]
+}

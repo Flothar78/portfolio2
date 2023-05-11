@@ -86,14 +86,25 @@ html {
   100% {
     transform: translate(0, 0);
     opacity: 1; } }
-.personal-frame-animation {
+.personal-frame-fade-out {
   animation-name: fade-out;
-  animation-duration: 2000ms; }
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards; }
 
 @keyframes fade-out {
   0% {
     opacity: 1; }
   100% {
     opacity: 0; } }
+.personal-frame-fade-in {
+  animation-name: fade-in;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=portfolio.css.map */

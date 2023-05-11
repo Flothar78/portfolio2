@@ -94,10 +94,10 @@ html {
     opacity: 1;
   }
 }
-
-.personal-frame-animation {
+.personal-frame-fade-out {
   animation-name: fade-out;
-  animation-duration: 2000ms;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
 }
 @keyframes fade-out {
   0% {
@@ -105,5 +105,18 @@ html {
   }
   100% {
     opacity: 0;
+  }
+}
+.personal-frame-fade-in {
+  animation-name: fade-in;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

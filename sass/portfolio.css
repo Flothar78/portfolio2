@@ -3,11 +3,6 @@ html {
   scroll-behavior: smooth;
   height: 100%;
   margin: 0; }
-  body .project-picture-animation,
-  html .project-picture-animation {
-    animation-name: slide-in;
-    animation-duration: 4500ms;
-    animation-fill-mode: forwards; }
   @media screen and (max-width: 1399px) {
     body .background,
     html .background {
@@ -19,6 +14,7 @@ html {
         justify-content: space-around; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
+          background-color: red;
           border: #0b0b0b solid 1px;
           min-height: 400px;
           width: 30%;
@@ -52,6 +48,7 @@ html {
         justify-content: space-around; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
+          background-color: red;
           border: #0b0b0b solid 1px;
           min-height: 200px;
           width: 30%;
@@ -75,6 +72,11 @@ html {
             width: 100%;
             opacity: 0; } }
 
+.project-picture-animation {
+  animation-name: slide-in;
+  animation-duration: 4500ms;
+  animation-fill-mode: forwards; }
+
 @keyframes slide-in {
   0% {
     opacity: 0; }
@@ -84,5 +86,14 @@ html {
   100% {
     transform: translate(0, 0);
     opacity: 1; } }
+.personal-frame-animation {
+  animation-name: fade-out;
+  animation-duration: 2000ms; }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 /*# sourceMappingURL=portfolio.css.map */

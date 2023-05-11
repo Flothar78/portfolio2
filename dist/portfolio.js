@@ -15,12 +15,13 @@ const personalFrame = document.querySelector(".personal-frame");
 const personalObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) {
+            entry.target.classList.remove("personal-frame-fade-in");
             entry.target.classList.add("personal-frame-fade-out");
         }
         else {
             entry.target.classList.remove("personal-frame-fade-out");
-            // entry.target.classList.add("personal-frame-fade-in");
+            entry.target.classList.add("personal-frame-fade-in");
         }
     });
-}, { threshold: 0.95 });
+}, { threshold: 0.5 });
 personalObserver.observe(personalFrame);

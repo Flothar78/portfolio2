@@ -11,11 +11,28 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.3 }
+  { threshold: 1 }
 );
 pictures.forEach((picture) => {
   observer.observe(picture);
 });
+
+const projectTitle = document.querySelectorAll(".figcaption-project");
+const titleObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle(
+        "figcaption-project-animation",
+        entry.isIntersecting
+      );
+      if (entry.isIntersecting) {
+        titleObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.8 }
+);
+projectTitle.forEach((element) => titleObserver.observe(element));
 
 const personalFrame = document.querySelector(".personal-frame")!;
 const personalObserver = new IntersectionObserver(

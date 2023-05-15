@@ -18,6 +18,16 @@ html {
           padding-bottom: 40%;
           border-radius: 10%;
         }
+        .personal-frame-fade-out {
+          animation-name: fade-out;
+          animation-duration: 1000ms;
+          animation-fill-mode: forwards;
+        }
+        .personal-frame-fade-in {
+          animation-name: fade-in;
+          animation-duration: 2500ms;
+          animation-fill-mode: forwards;
+        }
       }
       .projects-frame {
         border: rgb(209, 25, 25) solid 1px;
@@ -29,115 +39,149 @@ html {
         border: solid 1px blue;
         margin: 8%;
         max-height: 50%;
-        figcaption {
+        .figcaption-project {
           border: red solid 1px;
           margin-bottom: 22px;
           background: rgb(132, 218, 4);
           height: 8vh;
-          &:hover {
-            transform: rotate3d(2, -1, -0.7, -0.2turn);
-          }
         }
         .project-picture {
           height: 100%;
           width: 100%;
           opacity: 0;
         }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .background {
-    background: rgba(219, 184, 180, 0.4);
-    padding: 3%;
-    .draws-and-person-frames {
-      display: flex;
-      justify-content: space-around;
-      .personal-frame {
-        background-color: red;
-        border: rgb(11, 11, 11) solid 1px;
-        width: 70%;
-        padding-bottom: 50%;
-        margin-bottom: 10%;
-        border-radius: 10%;
-      }
-    }
-    .projects-frame {
-      border: rgb(209, 25, 25) solid 1px;
-      display: flex;
-      flex-direction: column;
-      h3 {
-        margin: auto;
-      }
-      .project {
-        border: solid 1px blue;
-        margin: 7% 17%;
-        .project-picture {
-          width: 100%;
-          margin: 0;
-          opacity: 0;
+        .project-picture-animation {
+          animation-name: slide-in;
+          animation-duration: 2500ms;
+          animation-fill-mode: forwards;
+          animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
         }
       }
     }
   }
-}
-.personal-frame-fade-out {
-  animation-name: fade-out;
-  animation-duration: 1000ms;
-  animation-fill-mode: forwards;
-}
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.personal-frame-fade-in {
-  animation-name: fade-in;
-  animation-duration: 2500ms;
-  animation-fill-mode: forwards;
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
-.project-picture-animation {
-  animation-name: slide-in;
-  animation-duration: 2500ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
-}
-@keyframes slide-in {
-  0% {
-    opacity: 0;
+  @media screen and (min-width: 1400px) {
+    .background {
+      background: rgba(219, 184, 180, 0.4);
+      padding: 3%;
+      .draws-and-person-frames {
+        display: flex;
+        justify-content: space-around;
+        .personal-frame {
+          background-color: red;
+          border: rgb(11, 11, 11) solid 1px;
+          width: 70%;
+          padding-bottom: 50%;
+          margin-bottom: 10%;
+          border-radius: 10%;
+        }
+        .personal-frame-fade-out {
+          animation-name: fade-out;
+          animation-duration: 1000ms;
+          animation-fill-mode: forwards;
+        }
+        .personal-frame-fade-in {
+          animation-name: fade-in;
+          animation-duration: 2500ms;
+          animation-fill-mode: forwards;
+        }
+      }
+      .projects-frame {
+        border: rgb(209, 25, 25) solid 1px;
+        display: flex;
+        flex-direction: column;
+        h3 {
+          margin: auto;
+        }
+        .project {
+          border: solid 1px blue;
+          margin: 7% 17%;
+          .figcaption-project {
+            border: red solid 1px;
+            margin-bottom: 22px;
+            background: rgb(132, 218, 4);
+            height: 8vh;
+            opacity: 0;
+          }
+
+          .project-picture {
+            width: 100%;
+            margin: 0;
+            opacity: 0;
+          }
+          .project-picture-animation {
+            animation-name: slide-in;
+            animation-duration: 2500ms;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
+          }
+        }
+      }
+    }
   }
-  1% {
-    transform: translate(100%, 0);
-    opacity: 0;
+  .figcaption-project-animation {
+    animation-name: rotate-title;
+    animation-duration: 2500ms;
+    animation-fill-mode: forwards;
+    //animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
   }
-  10% {
-    opacity: 0.2;
+  @keyframes rotate-title {
+    0% {
+      opacity: 0;
+      transform: rotate3d(2, -1, -1, -0.5turn);
+    }
+    1% {
+      opacity: 1;
+    }
+    50% {
+      transform: rotate3d(2, -1, -1, -0.2turn);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate3d(2, -1, -1, -0turn);
+      opacity: 1;
+    }
   }
-  20% {
-    opacity: 0.4;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  30% {
-    opacity: 0.6;
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
-  40% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+    }
+    1% {
+      transform: translate(100%, 0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.2;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    30% {
+      opacity: 0.6;
+    }
+    40% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
 }

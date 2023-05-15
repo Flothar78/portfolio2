@@ -11,7 +11,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0 }
+  { threshold: 0.3 }
 );
 pictures.forEach((picture) => {
   observer.observe(picture);
@@ -21,12 +21,12 @@ const personalFrame = document.querySelector(".personal-frame")!;
 const personalObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        entry.target.classList.remove("personal-frame-fade-in");
-        entry.target.classList.add("personal-frame-fade-out");
-      } else {
+      if (entry.isIntersecting) {
         entry.target.classList.remove("personal-frame-fade-out");
         entry.target.classList.add("personal-frame-fade-in");
+      } else {
+        entry.target.classList.remove("personal-frame-fade-in");
+        entry.target.classList.add("personal-frame-fade-out");
       }
     });
   },

@@ -7,7 +7,7 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 1 });
+});
 pictures.forEach((picture) => {
     observer.observe(picture);
 });

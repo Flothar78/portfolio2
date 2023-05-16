@@ -1,18 +1,15 @@
 const pictures = document.querySelectorAll(".project-picture");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle(
-        "project-picture-animation",
-        entry.isIntersecting
-      );
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 1 }
-);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    entry.target.classList.toggle(
+      "project-picture-animation",
+      entry.isIntersecting
+    );
+    if (entry.isIntersecting) {
+      observer.unobserve(entry.target);
+    }
+  });
+});
 pictures.forEach((picture) => {
   observer.observe(picture);
 });

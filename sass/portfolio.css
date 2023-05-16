@@ -14,10 +14,10 @@ html {
         justify-content: space-around; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
-          background-color: red;
+          background-color: #9a5a5a;
           border: #0b0b0b solid 1px;
           height: 25vh;
-          width: 70%;
+          width: 50vw;
           padding-bottom: 40%;
           border-radius: 10%; }
         body .background .draws-and-person-frames .personal-frame-fade-out,
@@ -70,9 +70,9 @@ html {
         justify-content: space-around; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
-          background-color: red;
+          background-color: #9a5a5a;
           border: #0b0b0b solid 1px;
-          width: 70%;
+          width: 50vh;
           padding-bottom: 50%;
           margin-bottom: 10%;
           border-radius: 10%; }

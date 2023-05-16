@@ -19,7 +19,7 @@ const titleObserver = new IntersectionObserver((entries) => {
             titleObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.8 });
+}, { threshold: 1 });
 projectTitle.forEach((element) => titleObserver.observe(element));
 const personalFrame = document.querySelector(".personal-frame");
 const personalObserver = new IntersectionObserver((entries) => {
@@ -33,5 +33,5 @@ const personalObserver = new IntersectionObserver((entries) => {
             entry.target.classList.add("personal-frame-fade-out");
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.9 });
 personalObserver.observe(personalFrame);

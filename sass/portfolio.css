@@ -43,21 +43,22 @@ html {
         max-height: 50%; }
         body .background .project .figcaption-project,
         html .background .project .figcaption-project {
+          position: relative;
+          text-align: center;
+          font-size: 22px;
+          font-weight: bold;
           border: red solid 1px;
           margin-bottom: 22px;
           background: #84da04;
-          height: 8vh; }
+          height: 8vh;
+          opacity: 0;
+          z-index: 2; }
         body .background .project .project-picture,
         html .background .project .project-picture {
-          height: 100%;
+          position: relative;
           width: 100%;
-          opacity: 0; }
-        body .background .project .project-picture-animation,
-        html .background .project .project-picture-animation {
-          animation-name: slide-in;
-          animation-duration: 2500ms;
-          animation-fill-mode: forwards;
-          animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03); } }
+          opacity: 0;
+          z-index: 1; } }
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
@@ -99,38 +100,35 @@ html {
           margin: 7% 17%; }
           body .background .projects-frame .project .figcaption-project,
           html .background .projects-frame .project .figcaption-project {
+            position: relative;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
             border: red solid 1px;
             margin-bottom: 22px;
             background: #84da04;
             height: 8vh;
-            opacity: 0; }
+            opacity: 0;
+            z-index: 2; }
           body .background .projects-frame .project .project-picture,
           html .background .projects-frame .project .project-picture {
+            position: relative;
             width: 100%;
-            margin: 0;
-            opacity: 0; }
-          body .background .projects-frame .project .project-picture-animation,
-          html .background .projects-frame .project .project-picture-animation {
-            animation-name: slide-in;
-            animation-duration: 2500ms;
-            animation-fill-mode: forwards;
-            animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03); } }
+            opacity: 0;
+            z-index: 1; } }
   body .figcaption-project-animation,
   html .figcaption-project-animation {
     animation-name: rotate-title;
-    animation-duration: 2500ms;
+    animation-duration: 1500ms;
     animation-fill-mode: forwards; }
 @keyframes rotate-title {
   0% {
     opacity: 0;
-    transform: rotate3d(2, -1, -1, -0.5turn); }
+    transform: rotate3d(2, -1, -1, -0.2turn); }
   1% {
     opacity: 1; }
-  50% {
-    transform: rotate3d(2, -1, -1, -0.2turn);
-    opacity: 1; }
   100% {
-    transform: rotate3d(2, -1, -1, 0turn);
+    transform: rotate3d(0, 0, 0, 0turn);
     opacity: 1; } }
 @keyframes fade-in {
   0% {
@@ -142,6 +140,12 @@ html {
     opacity: 1; }
   100% {
     opacity: 0; } }
+  body .project-picture-animation,
+  html .project-picture-animation {
+    animation-name: slide-in;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03); }
 @keyframes slide-in {
   0% {
     opacity: 0; }

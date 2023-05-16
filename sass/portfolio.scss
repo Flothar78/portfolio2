@@ -40,21 +40,22 @@ html {
         margin: 8%;
         max-height: 50%;
         .figcaption-project {
+          position: relative;
+          text-align: center;
+          font-size: 22px;
+          font-weight: bold;
           border: red solid 1px;
           margin-bottom: 22px;
           background: rgb(132, 218, 4);
           height: 8vh;
+          opacity: 0;
+          z-index: 2;
         }
         .project-picture {
-          height: 100%;
+          position: relative;
           width: 100%;
           opacity: 0;
-        }
-        .project-picture-animation {
-          animation-name: slide-in;
-          animation-duration: 2500ms;
-          animation-fill-mode: forwards;
-          animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
+          z-index: 1;
         }
       }
     }
@@ -97,23 +98,22 @@ html {
           border: solid 1px blue;
           margin: 7% 17%;
           .figcaption-project {
+            position: relative;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
             border: red solid 1px;
             margin-bottom: 22px;
             background: rgb(132, 218, 4);
             height: 8vh;
             opacity: 0;
+            z-index: 2;
           }
-
           .project-picture {
+            position: relative;
             width: 100%;
-            margin: 0;
             opacity: 0;
-          }
-          .project-picture-animation {
-            animation-name: slide-in;
-            animation-duration: 2500ms;
-            animation-fill-mode: forwards;
-            animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
+            z-index: 1;
           }
         }
       }
@@ -121,24 +121,20 @@ html {
   }
   .figcaption-project-animation {
     animation-name: rotate-title;
-    animation-duration: 2500ms;
+    animation-duration: 1500ms;
     animation-fill-mode: forwards;
     //animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
   }
   @keyframes rotate-title {
     0% {
       opacity: 0;
-      transform: rotate3d(2, -1, -1, -0.5turn);
+      transform: rotate3d(2, -1, -1, -0.2turn);
     }
     1% {
       opacity: 1;
     }
-    50% {
-      transform: rotate3d(2, -1, -1, -0.2turn);
-      opacity: 1;
-    }
     100% {
-      transform: rotate3d(2, -1, -1, -0turn);
+      transform: rotate3d(0, 0, 0, -0turn);
       opacity: 1;
     }
   }
@@ -158,6 +154,12 @@ html {
     100% {
       opacity: 0;
     }
+  }
+  .project-picture-animation {
+    animation-name: slide-in;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
   }
   @keyframes slide-in {
     0% {

@@ -30,7 +30,7 @@ const titleObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.8 }
+  { threshold: 1 }
 );
 projectTitle.forEach((element) => titleObserver.observe(element));
 
@@ -47,6 +47,6 @@ const personalObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.9 }
 );
 personalObserver.observe(personalFrame);

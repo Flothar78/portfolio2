@@ -6,7 +6,7 @@ html {
   @media screen and (min-width: 900px) and (max-width: 1399px) {
     body .background,
     html .background {
-      background: rgba(219, 184, 180, 0.4);
+      background: #060e20;
       padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -14,7 +14,7 @@ html {
         justify-content: space-around; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
-          background-color: #9a5a5a;
+          background-color: #20060E;
           border: #0b0b0b solid 1px;
           height: 55vh;
           width: 50vw;
@@ -32,12 +32,14 @@ html {
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
+        background: #062018;
         border: #d11919 solid 1px;
         margin-top: 5%;
         display: flex;
         flex-direction: column; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
+          background: #20060E;
           border: solid 1px blue;
           margin: 8%;
           height: 70vh; }
@@ -70,7 +72,7 @@ html {
         justify-content: space-around; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
-          background-color: #9a5a5a;
+          background-color: #20060E;
           border: #0b0b0b solid 1px;
           width: 50vh;
           padding-bottom: 50%;
@@ -88,11 +90,13 @@ html {
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
+        background: #062018;
         border: #d11919 solid 1px;
         display: flex;
         flex-direction: column; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
+          background: #20060E;
           scroll-snap-align: center;
           border: solid 1px blue;
           margin: 7% 17%; }

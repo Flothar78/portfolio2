@@ -4,6 +4,7 @@ html {
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
+
   @media screen and (min-width: 900px) and (max-width: 1399px) {
     .background {
       background: rgba(219, 184, 180, 0.4);
@@ -14,7 +15,7 @@ html {
         .personal-frame {
           background-color: $personal-frame-bg;
           border: rgb(11, 11, 11) solid 1px;
-          height: 25vh;
+          height: 55vh;
           width: 50vw;
           padding-bottom: 40%;
           border-radius: 10%;
@@ -35,28 +36,28 @@ html {
         margin-top: 5%;
         display: flex;
         flex-direction: column;
-      }
-      .project {
-        border: solid 1px blue;
-        margin: 8%;
-        max-height: 50%;
-        .figcaption-project {
-          position: relative;
-          text-align: center;
-          font-size: 22px;
-          font-weight: bold;
-          border: red solid 1px;
-          margin-bottom: 22px;
-          background: rgb(132, 218, 4);
-          height: 8vh;
-          opacity: 0;
-          z-index: 2;
-        }
-        .project-picture {
-          position: relative;
-          width: 100%;
-          opacity: 0;
-          z-index: 1;
+        .project {
+          border: solid 1px blue;
+          margin: 8%;
+          height: 70vh;
+          .figcaption-project {
+            position: relative;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            border: red solid 1px;
+            margin-bottom: 22px;
+            background: rgb(132, 218, 4);
+            height: 8vh;
+            opacity: 0;
+            z-index: 2;
+          }
+          .project-picture {
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            z-index: 1;
+          }
         }
       }
     }
@@ -92,10 +93,8 @@ html {
         border: rgb(209, 25, 25) solid 1px;
         display: flex;
         flex-direction: column;
-        h3 {
-          margin: auto;
-        }
         .project {
+          scroll-snap-align: center;
           border: solid 1px blue;
           margin: 7% 17%;
           .figcaption-project {

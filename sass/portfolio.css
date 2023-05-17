@@ -16,7 +16,7 @@ html {
         html .background .draws-and-person-frames .personal-frame {
           background-color: #9a5a5a;
           border: #0b0b0b solid 1px;
-          height: 25vh;
+          height: 55vh;
           width: 50vw;
           padding-bottom: 40%;
           border-radius: 10%; }
@@ -36,29 +36,29 @@ html {
         margin-top: 5%;
         display: flex;
         flex-direction: column; }
-      body .background .project,
-      html .background .project {
-        border: solid 1px blue;
-        margin: 8%;
-        max-height: 50%; }
-        body .background .project .figcaption-project,
-        html .background .project .figcaption-project {
-          position: relative;
-          text-align: center;
-          font-size: 22px;
-          font-weight: bold;
-          border: red solid 1px;
-          margin-bottom: 22px;
-          background: #84da04;
-          height: 8vh;
-          opacity: 0;
-          z-index: 2; }
-        body .background .project .project-picture,
-        html .background .project .project-picture {
-          position: relative;
-          width: 100%;
-          opacity: 0;
-          z-index: 1; } }
+        body .background .projects-frame .project,
+        html .background .projects-frame .project {
+          border: solid 1px blue;
+          margin: 8%;
+          height: 70vh; }
+          body .background .projects-frame .project .figcaption-project,
+          html .background .projects-frame .project .figcaption-project {
+            position: relative;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            border: red solid 1px;
+            margin-bottom: 22px;
+            background: #84da04;
+            height: 8vh;
+            opacity: 0;
+            z-index: 2; }
+          body .background .projects-frame .project .project-picture,
+          html .background .projects-frame .project .project-picture {
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            z-index: 1; } }
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
@@ -91,11 +91,9 @@ html {
         border: #d11919 solid 1px;
         display: flex;
         flex-direction: column; }
-        body .background .projects-frame h3,
-        html .background .projects-frame h3 {
-          margin: auto; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
+          scroll-snap-align: center;
           border: solid 1px blue;
           margin: 7% 17%; }
           body .background .projects-frame .project .figcaption-project,

@@ -1,9 +1,9 @@
 body,
 html {
-  $background: #060e20;
-  $personal-frame-bg: #20060E;
+  $background: linear-gradient(-45deg, #ff0000, lime, #0000ff);
+  $personal-frame-bg: linear-gradient(90deg, black, white);
   $project-frame-bg: #062018;
-  $project-bg: #20060E;
+  $project-bg: #20060e;
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
@@ -15,13 +15,20 @@ html {
       .draws-and-person-frames {
         display: flex;
         justify-content: space-around;
+        height: 100vh;
+        .draws-frame {
+          font-size: 2em;
+          color: red;
+        }
         .personal-frame {
-          background-color: $personal-frame-bg;
+          background: $personal-frame-bg;
           border: rgb(11, 11, 11) solid 1px;
-          height: 55vh;
-          width: 50vw;
-          padding-bottom: 40%;
+          width: 70%;
+          height: 90%;
           border-radius: 10%;
+          font-size: 2em;
+          text-align: center;
+          color: red;
         }
         .personal-frame-fade-out {
           animation-name: fade-out;
@@ -40,11 +47,15 @@ html {
         margin-top: 5%;
         display: flex;
         flex-direction: column;
+        text-align: center;
+        color: yellow;
         .project {
           background: $project-bg;
           border: solid 1px blue;
           margin: 8%;
-          height: 70vh;
+          height: 70%;
+          text-align: center;
+          color: rgb(238, 5, 5);
           .figcaption-project {
             position: relative;
             text-align: center;
@@ -70,18 +81,28 @@ html {
 
   @media screen and (min-width: 1400px) {
     .background {
-      background: rgba(219, 184, 180, 0.4);
-      padding: 3%;
+      background: $background;
+      padding: 3vw;
       .draws-and-person-frames {
+        border: yellow solid 2px;
         display: flex;
         justify-content: space-around;
+        height: 100vh;
+        .draws-frame {
+          border: green solid 2px;
+          font-size: 2em;
+          color: red;
+        }
         .personal-frame {
-          background-color: $personal-frame-bg;
+          background: $personal-frame-bg;
           border: rgb(11, 11, 11) solid 1px;
-          width: 50vh;
-          padding-bottom: 50%;
+          width: 70%;
+          height: 90%;
           margin-bottom: 10%;
           border-radius: 10%;
+          text-align: center;
+          color: red;
+          font-size: 2em;
         }
         .personal-frame-fade-out {
           animation-name: fade-out;
@@ -99,10 +120,14 @@ html {
         border: rgb(209, 25, 25) solid 1px;
         display: flex;
         flex-direction: column;
+        text-align: center;
+        color: yellow;
         .project {
           background: $project-bg;
           scroll-snap-align: center;
           border: solid 1px blue;
+          text-align: center;
+          color: red;
           margin: 7% 17%;
           .figcaption-project {
             position: relative;

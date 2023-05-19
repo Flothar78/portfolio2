@@ -1,12 +1,13 @@
 body,
 html {
-  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  overflow-x: hidden;
   height: 100%;
   margin: 0; }
   @media screen and (min-width: 900px) and (max-width: 1399px) {
     body .background,
     html .background {
-      background: linear-gradient(74deg, #ff0000, lime, #0000ff);
+      background: linear-gradient(74deg, red, red, lime, blue, blue);
       padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -19,7 +20,7 @@ html {
           color: red; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
-          background: linear-gradient(90deg, black, white);
+          background: linear-gradient(-45deg, black, white);
           width: 70%;
           height: 90%;
           border-radius: 10%;
@@ -47,10 +48,10 @@ html {
         body .background .projects-frame .project,
         html .background .projects-frame .project {
           background: purple;
-          box-shadow: 25px 25px 10px grey;
+          scroll-snap-align: center;
+          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
           margin: 8%;
-          height: 70%;
           text-align: center;
           color: #ee0505; }
           body .background .projects-frame .project .figcaption-project,
@@ -73,7 +74,7 @@ html {
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
-      background: linear-gradient(74deg, #ff0000, lime, #0000ff);
+      background: linear-gradient(74deg, red, red, lime, blue, blue);
       padding: 3vw; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -86,7 +87,7 @@ html {
           color: red; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
-          background: linear-gradient(90deg, black, white);
+          background: linear-gradient(-45deg, black, white);
           width: 70%;
           height: 90%;
           border-radius: 10%;
@@ -114,7 +115,7 @@ html {
         body .background .projects-frame .project,
         html .background .projects-frame .project {
           background: purple;
-          box-shadow: 25px 25px 5px #c4c2c2;
+          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
           text-align: center;
           color: red;

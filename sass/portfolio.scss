@@ -1,7 +1,7 @@
 body,
 html {
-  $background: linear-gradient(74deg, #ff0000, lime, #0000ff);
-  $personal-frame-bg: linear-gradient(90deg, black, white);
+  $background: linear-gradient(74deg, red, red, lime, blue, blue);
+  $personal-frame-bg: linear-gradient(-45deg, black, white);
   $project-frame-bg: linear-gradient(
     74deg,
     transparent,
@@ -11,7 +11,8 @@ html {
   );
   $project-bg: purple;
   $figcaption-project-bg: yellow;
-  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  overflow-x: hidden;
   height: 100%;
   margin: 0;
 
@@ -54,16 +55,14 @@ html {
         flex-direction: column;
         text-align: center;
         border-radius: 27px;
-
         .project {
           background: $project-bg;
-          box-shadow: 25px 25px 10px grey;
+          scroll-snap-align: center;
+          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
           margin: 8%;
-          height: 70%;
           text-align: center;
           color: rgb(238, 5, 5);
-
           .figcaption-project {
             position: relative;
             text-align: center;
@@ -128,8 +127,7 @@ html {
 
         .project {
           background: $project-bg;
-          //scroll-snap-align: center;
-          box-shadow: 25px 25px 5px rgb(196, 194, 194);
+          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
           text-align: center;
           color: red;

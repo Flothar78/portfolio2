@@ -6,7 +6,7 @@ html {
   @media screen and (min-width: 900px) and (max-width: 1399px) {
     body .background,
     html .background {
-      background: linear-gradient(-45deg, #ff0000, lime, #0000ff);
+      background: linear-gradient(45deg, #ff0000, lime, #0000ff);
       padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -20,7 +20,6 @@ html {
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
           background: linear-gradient(90deg, black, white);
-          border: #0b0b0b solid 1px;
           width: 70%;
           height: 90%;
           border-radius: 10%;
@@ -39,8 +38,7 @@ html {
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
-        background: #062018;
-        border: #d11919 solid 1px;
+        background: linear-gradient(74deg, transparent, transparent, white, transparent);
         margin-top: 5%;
         display: flex;
         flex-direction: column;
@@ -48,8 +46,7 @@ html {
         color: yellow; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
-          background: #20060e;
-          border: solid 1px blue;
+          background: purple;
           margin: 8%;
           height: 70%;
           text-align: center;
@@ -60,9 +57,8 @@ html {
             text-align: center;
             font-size: 22px;
             font-weight: bold;
-            border: red solid 1px;
             margin-bottom: 22px;
-            background: #84da04;
+            background: yellow;
             height: 8vh;
             opacity: 0;
             z-index: 2; }
@@ -75,27 +71,24 @@ html {
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
-      background: linear-gradient(-45deg, #ff0000, lime, #0000ff);
+      background: linear-gradient(45deg, #ff0000, lime, #0000ff);
       padding: 3vw; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
-        border: yellow solid 2px;
         display: flex;
         justify-content: space-around;
         height: 100vh; }
         body .background .draws-and-person-frames .draws-frame,
         html .background .draws-and-person-frames .draws-frame {
-          border: green solid 2px;
           font-size: 2em;
           color: red; }
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
           background: linear-gradient(90deg, black, white);
-          border: #0b0b0b solid 1px;
           width: 70%;
           height: 90%;
-          margin-bottom: 10%;
           border-radius: 10%;
+          margin-bottom: 10%;
           text-align: center;
           color: red;
           font-size: 2em; }
@@ -111,17 +104,16 @@ html {
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
-        background: #062018;
-        border: #d11919 solid 1px;
+        background: linear-gradient(74deg, transparent, transparent, white, transparent);
         display: flex;
         flex-direction: column;
         text-align: center;
         color: yellow; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
-          background: #20060e;
-          scroll-snap-align: center;
-          border: solid 1px blue;
+          background: purple;
+          box-shadow: 25px 25px 5px grey;
+          border-radius: 5%;
           text-align: center;
           color: red;
           margin: 7% 17%; }
@@ -131,9 +123,8 @@ html {
             text-align: center;
             font-size: 22px;
             font-weight: bold;
-            border: red solid 1px;
             margin-bottom: 22px;
-            background: #84da04;
+            background: yellow;
             height: 8vh;
             opacity: 0;
             z-index: 2; }

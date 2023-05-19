@@ -1,9 +1,16 @@
 body,
 html {
-  $background: linear-gradient(-45deg, #ff0000, lime, #0000ff);
+  $background: linear-gradient(45deg, #ff0000, lime, #0000ff);
   $personal-frame-bg: linear-gradient(90deg, black, white);
-  $project-frame-bg: #062018;
-  $project-bg: #20060e;
+  $project-frame-bg: linear-gradient(
+    74deg,
+    transparent,
+    transparent,
+    white,
+    transparent
+  );
+  $project-bg: purple;
+  $figcaption-project-bg: yellow;
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
@@ -22,7 +29,6 @@ html {
         }
         .personal-frame {
           background: $personal-frame-bg;
-          border: rgb(11, 11, 11) solid 1px;
           width: 70%;
           height: 90%;
           border-radius: 10%;
@@ -43,27 +49,26 @@ html {
       }
       .projects-frame {
         background: $project-frame-bg;
-        border: rgb(209, 25, 25) solid 1px;
         margin-top: 5%;
         display: flex;
         flex-direction: column;
         text-align: center;
         color: yellow;
+
         .project {
           background: $project-bg;
-          border: solid 1px blue;
           margin: 8%;
           height: 70%;
           text-align: center;
           color: rgb(238, 5, 5);
+
           .figcaption-project {
             position: relative;
             text-align: center;
             font-size: 22px;
             font-weight: bold;
-            border: red solid 1px;
             margin-bottom: 22px;
-            background: rgb(132, 218, 4);
+            background: $figcaption-project-bg;
             height: 8vh;
             opacity: 0;
             z-index: 2;
@@ -84,22 +89,19 @@ html {
       background: $background;
       padding: 3vw;
       .draws-and-person-frames {
-        border: yellow solid 2px;
         display: flex;
         justify-content: space-around;
         height: 100vh;
         .draws-frame {
-          border: green solid 2px;
           font-size: 2em;
           color: red;
         }
         .personal-frame {
           background: $personal-frame-bg;
-          border: rgb(11, 11, 11) solid 1px;
           width: 70%;
           height: 90%;
-          margin-bottom: 10%;
           border-radius: 10%;
+          margin-bottom: 10%;
           text-align: center;
           color: red;
           font-size: 2em;
@@ -117,15 +119,15 @@ html {
       }
       .projects-frame {
         background: $project-frame-bg;
-        border: rgb(209, 25, 25) solid 1px;
         display: flex;
         flex-direction: column;
         text-align: center;
         color: yellow;
         .project {
           background: $project-bg;
-          scroll-snap-align: center;
-          border: solid 1px blue;
+          //scroll-snap-align: center;
+          box-shadow: 25px 25px 5px grey;
+          border-radius: 5%;
           text-align: center;
           color: red;
           margin: 7% 17%;
@@ -134,9 +136,8 @@ html {
             text-align: center;
             font-size: 22px;
             font-weight: bold;
-            border: red solid 1px;
             margin-bottom: 22px;
-            background: rgb(132, 218, 4);
+            background: $figcaption-project-bg;
             height: 8vh;
             opacity: 0;
             z-index: 2;

@@ -1,6 +1,6 @@
 body,
 html {
-  $background: linear-gradient(45deg, #ff0000, lime, #0000ff);
+  $background: linear-gradient(74deg, #ff0000, lime, #0000ff);
   $personal-frame-bg: linear-gradient(90deg, black, white);
   $project-frame-bg: linear-gradient(
     74deg,
@@ -53,10 +53,12 @@ html {
         display: flex;
         flex-direction: column;
         text-align: center;
-        color: yellow;
+        border-radius: 27px;
 
         .project {
           background: $project-bg;
+          box-shadow: 25px 25px 10px grey;
+          border-radius: 5%;
           margin: 8%;
           height: 70%;
           text-align: center;
@@ -122,11 +124,12 @@ html {
         display: flex;
         flex-direction: column;
         text-align: center;
-        color: yellow;
+        border-radius: 43px;
+
         .project {
           background: $project-bg;
           //scroll-snap-align: center;
-          box-shadow: 25px 25px 5px grey;
+          box-shadow: 25px 25px 5px rgb(196, 194, 194);
           border-radius: 5%;
           text-align: center;
           color: red;

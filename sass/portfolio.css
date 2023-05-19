@@ -6,7 +6,7 @@ html {
   @media screen and (min-width: 900px) and (max-width: 1399px) {
     body .background,
     html .background {
-      background: linear-gradient(45deg, #ff0000, lime, #0000ff);
+      background: linear-gradient(74deg, #ff0000, lime, #0000ff);
       padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -43,10 +43,12 @@ html {
         display: flex;
         flex-direction: column;
         text-align: center;
-        color: yellow; }
+        border-radius: 27px; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
           background: purple;
+          box-shadow: 25px 25px 10px grey;
+          border-radius: 5%;
           margin: 8%;
           height: 70%;
           text-align: center;
@@ -71,7 +73,7 @@ html {
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
-      background: linear-gradient(45deg, #ff0000, lime, #0000ff);
+      background: linear-gradient(74deg, #ff0000, lime, #0000ff);
       padding: 3vw; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -108,11 +110,11 @@ html {
         display: flex;
         flex-direction: column;
         text-align: center;
-        color: yellow; }
+        border-radius: 43px; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
           background: purple;
-          box-shadow: 25px 25px 5px grey;
+          box-shadow: 25px 25px 5px #c4c2c2;
           border-radius: 5%;
           text-align: center;
           color: red;

@@ -7,14 +7,16 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-});
+}
+// { rootMargin: "-250px" }
+);
 pictures.forEach((picture) => {
     observer.observe(picture);
 });
-const projectTitle = document.querySelectorAll(".figcaption-project");
+const projectTitle = document.querySelectorAll(".project-figcaption");
 const titleObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        entry.target.classList.toggle("figcaption-project-animation", entry.isIntersecting);
+        entry.target.classList.toggle("project-figcaption-animation", entry.isIntersecting);
         if (entry.isIntersecting) {
             titleObserver.unobserve(entry.target);
         }
@@ -35,3 +37,4 @@ const personalObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.9 });
 personalObserver.observe(personalFrame);
+//# sourceMappingURL=portfolio.js.map

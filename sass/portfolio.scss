@@ -1,18 +1,16 @@
 body,
 html {
-  $background: linear-gradient(74deg, red, red, lime, blue, blue);
+  $background: linear-gradient(82deg, blue, lime, red);
   $personal-frame-bg: linear-gradient(-45deg, black, white);
   $project-frame-bg: linear-gradient(
-    74deg,
-    transparent,
+    82deg,
     transparent,
     white,
+    transparent,
     transparent
   );
   $project-bg: purple;
-  $figcaption-project-bg: yellow;
-  scroll-snap-type: y proximity;
-  overflow-x: hidden;
+  $project-figcaption-bg: rgb(25, 0, 255);
   height: 100%;
   margin: 0;
 
@@ -38,12 +36,12 @@ html {
           color: red;
         }
         .personal-frame-fade-out {
-          animation-name: fade-out;
+          animation-name: personal-frame-fade-out;
           animation-duration: 1000ms;
           animation-fill-mode: forwards;
         }
         .personal-frame-fade-in {
-          animation-name: fade-in;
+          animation-name: personal-frame-fade-in;
           animation-duration: 2500ms;
           animation-fill-mode: forwards;
         }
@@ -57,26 +55,26 @@ html {
         border-radius: 27px;
         .project {
           background: $project-bg;
-          scroll-snap-align: center;
           box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
           margin: 8%;
+          padding: 8%;
           text-align: center;
           color: rgb(238, 5, 5);
-          .figcaption-project {
+          .project-figcaption {
             position: relative;
             text-align: center;
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 22px;
-            background: $figcaption-project-bg;
+            background: $project-figcaption-bg;
             height: 8vh;
             opacity: 0;
             z-index: 2;
           }
           .project-picture {
             position: relative;
-            width: 100%;
+            max-width: 55vw;
             opacity: 0;
             z-index: 1;
           }
@@ -84,7 +82,6 @@ html {
       }
     }
   }
-
   @media screen and (min-width: 1400px) {
     .background {
       background: $background;
@@ -99,8 +96,7 @@ html {
         }
         .personal-frame {
           background: $personal-frame-bg;
-          width: 70%;
-          height: 90%;
+          width: 50%;
           border-radius: 10%;
           margin-bottom: 10%;
           text-align: center;
@@ -108,13 +104,13 @@ html {
           font-size: 2em;
         }
         .personal-frame-fade-out {
-          animation-name: fade-out;
+          animation-name: personal-frame-fade-out;
           animation-duration: 1000ms;
           animation-fill-mode: forwards;
         }
         .personal-frame-fade-in {
-          animation-name: fade-in;
-          animation-duration: 2500ms;
+          animation-name: personal-frame-fade-in;
+          animation-duration: 2000ms;
           animation-fill-mode: forwards;
         }
       }
@@ -124,28 +120,30 @@ html {
         flex-direction: column;
         text-align: center;
         border-radius: 43px;
-
         .project {
           background: $project-bg;
           box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
+          margin: 7%;
+          padding: 3%;
+          width: 70%;
           text-align: center;
           color: red;
-          margin: 7% 17%;
-          .figcaption-project {
+          max-height: 90vh;
+          .project-figcaption {
             position: relative;
             text-align: center;
-            font-size: 22px;
+            font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 22px;
-            background: $figcaption-project-bg;
-            height: 8vh;
+            margin-bottom: 3%;
+            height: 10vh;
+            background: $project-figcaption-bg;
             opacity: 0;
             z-index: 2;
           }
           .project-picture {
             position: relative;
-            width: 100%;
+            max-width: 80%;
             opacity: 0;
             z-index: 1;
           }
@@ -153,16 +151,16 @@ html {
       }
     }
   }
-  .figcaption-project-animation {
+  .project-figcaption-animation {
     animation-name: rotate-title;
-    animation-duration: 1500ms;
+    animation-duration: 1200ms;
     animation-fill-mode: forwards;
-    //animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
+    animation-timing-function: ease-out;
   }
   @keyframes rotate-title {
     0% {
       opacity: 0;
-      transform: rotate3d(2, -1, -1, -0.2turn);
+      transform: rotate3d(2, 0, -1, -0.4turn);
     }
     1% {
       opacity: 1;
@@ -173,7 +171,7 @@ html {
     }
   }
 
-  @keyframes fade-in {
+  @keyframes personal-frame-fade-in {
     0% {
       opacity: 0;
     }
@@ -181,7 +179,7 @@ html {
       opacity: 1;
     }
   }
-  @keyframes fade-out {
+  @keyframes personal-frame-fade-out {
     0% {
       opacity: 1;
     }
@@ -191,6 +189,7 @@ html {
   }
   .project-picture-animation {
     animation-name: slide-in;
+    animation-delay: 600ms;
     animation-duration: 1500ms;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
@@ -201,19 +200,10 @@ html {
     }
     1% {
       transform: translate(100%, 0);
-      opacity: 0;
+      opacity: 0.1;
     }
-    10% {
-      opacity: 0.2;
-    }
-    20% {
-      opacity: 0.4;
-    }
-    30% {
-      opacity: 0.6;
-    }
-    40% {
-      opacity: 0.8;
+    95% {
+      opacity: 0.9;
     }
     100% {
       transform: translate(0, 0);

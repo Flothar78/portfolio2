@@ -1,6 +1,6 @@
 body,
 html {
-  $background: linear-gradient(68deg, red, red, lime, blue);
+  $background: linear-gradient(68deg, red, lime, red, blue);
   $personal-frame-bg: linear-gradient(-45deg, black, white);
   $project-frame-bg: linear-gradient(
     68deg,
@@ -15,70 +15,101 @@ html {
   $project-figcaption-bg: #008080;
   height: 100%;
   margin: 0;
-
-  @media screen and (min-width: 900px) and (max-width: 1399px) {
+  @mixin background {
+    background: $background;
+    padding: 3%;
+  }
+  @mixin draws-and-person-frames {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+  }
+  @mixin draws-frame {
+    font-size: 2em;
+    color: red;
+  }
+  @mixin personal-frame {
+    background: $personal-frame-bg;
+    width: 70%;
+    height: 90%;
+    border-radius: 10%;
+    font-size: 2em;
+    text-align: center;
+    color: red;
+  }
+  @mixin personal-frame-fade-out {
+    animation-name: personal-frame-fade-out;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+  }
+  @mixin personal-frame-fade-in {
+    animation-name: personal-frame-fade-in;
+    animation-duration: 2500ms;
+    animation-fill-mode: forwards;
+  }
+  @mixin projects-frame {
+    background: $project-frame-bg;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  @mixin project {
+    background: $project-bg;
+    box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
+    border-radius: 5%;
+    margin: 8%;
+    padding: 1%;
+    text-align: center;
+    color: rgb(3, 16, 92);
+  }
+  @mixin project-figcaption {
+    position: relative;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 3%;
+    background: $project-figcaption-bg;
+    opacity: 0;
+    z-index: 2;
+  }
+  @mixin project-picture {
+    position: relative;
+    max-width: 70%;
+    opacity: 0;
+    z-index: 1;
+  }
+  @media screen and (min-width: 900px) and (max-width: 1400px) {
     .background {
-      background: $background;
-      padding: 3%;
+      @include background;
       .draws-and-person-frames {
-        display: flex;
-        justify-content: space-around;
-        height: 100vh;
+        @include draws-and-person-frames;
         .draws-frame {
-          font-size: 2em;
-          color: red;
+          @include draws-frame;
         }
         .personal-frame {
-          background: $personal-frame-bg;
-          width: 70%;
-          height: 90%;
-          border-radius: 10%;
-          font-size: 2em;
-          text-align: center;
-          color: red;
+          @include personal-frame;
         }
         .personal-frame-fade-out {
-          animation-name: personal-frame-fade-out;
-          animation-duration: 1000ms;
-          animation-fill-mode: forwards;
+          @include personal-frame-fade-out;
         }
         .personal-frame-fade-in {
-          animation-name: personal-frame-fade-in;
-          animation-duration: 2500ms;
-          animation-fill-mode: forwards;
+          @include personal-frame-fade-in;
         }
       }
       .projects-frame {
-        background: $project-frame-bg;
-        margin-top: 5%;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+        @include projects-frame;
         border-radius: 27px;
         .project {
-          background: $project-bg;
-          box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
-          border-radius: 5%;
-          margin: 8%;
-          padding: 8%;
-          text-align: center;
-          color: rgb(3, 16, 92);
+          @include project;
+          max-height: 65vh;
           .project-figcaption {
-            position: relative;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 22px;
-            background: $project-figcaption-bg;
+            @include project-figcaption;
+
             height: 8vh;
-            opacity: 0;
-            z-index: 2;
           }
           .project-picture {
-            position: relative;
-            max-width: 55vw;
-            opacity: 0;
-            z-index: 1;
+            @include project-picture;
           }
         }
       }
@@ -86,68 +117,34 @@ html {
   }
   @media screen and (min-width: 1400px) {
     .background {
-      background: $background;
-      padding: 3vw;
+      @include background;
       .draws-and-person-frames {
-        display: flex;
-        justify-content: space-around;
-        height: 100vh;
+        @include draws-and-person-frames;
         .draws-frame {
-          font-size: 2em;
-          color: red;
+          @include draws-frame;
         }
         .personal-frame {
-          background: $personal-frame-bg;
-          width: 50%;
-          border-radius: 10%;
-          margin-bottom: 10%;
-          text-align: center;
-          color: red;
-          font-size: 2em;
+          @include personal-frame;
         }
         .personal-frame-fade-out {
-          animation-name: personal-frame-fade-out;
-          animation-duration: 1000ms;
-          animation-fill-mode: forwards;
+          @include personal-frame-fade-out;
         }
         .personal-frame-fade-in {
-          animation-name: personal-frame-fade-in;
-          animation-duration: 2000ms;
-          animation-fill-mode: forwards;
+          @include personal-frame-fade-in;
         }
       }
       .projects-frame {
-        background: $project-frame-bg;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+        @include projects-frame;
         border-radius: 43px;
         .project {
-          background: $project-bg;
-          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
-          border-radius: 5%;
-          margin: 7%;
-          padding: 3%;
-          width: 70%;
-          text-align: center;
-          color: red;
-          max-height: 90vh;
+          @include project;
+          max-height: 80vh;
           .project-figcaption {
-            position: relative;
-            text-align: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 3%;
+            @include project-figcaption;
             height: 10vh;
-            background: $project-figcaption-bg;
-            opacity: 0;
-            z-index: 2;
           }
           .project-picture {
-            position: relative;
-            max-width: 80%;
-            opacity: 0;
-            z-index: 1;
+            @include project-picture;
           }
         }
       }
@@ -172,23 +169,6 @@ html {
       opacity: 1;
     }
   }
-
-  @keyframes personal-frame-fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes personal-frame-fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
   .project-picture-animation {
     animation-name: slide-in;
     animation-delay: 600ms;
@@ -210,6 +190,22 @@ html {
     100% {
       transform: translate(0, 0);
       opacity: 1;
+    }
+  }
+  @keyframes personal-frame-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes personal-frame-fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 }

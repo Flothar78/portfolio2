@@ -2,10 +2,10 @@ body,
 html {
   height: 100%;
   margin: 0; }
-  @media screen and (min-width: 900px) and (max-width: 1399px) {
+  @media screen and (min-width: 900px) and (max-width: 1400px) {
     body .background,
     html .background {
-      background: linear-gradient(68deg, red, red, lime, blue);
+      background: linear-gradient(68deg, red, lime, red, blue);
       padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -49,31 +49,32 @@ html {
           box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
           border-radius: 5%;
           margin: 8%;
-          padding: 8%;
+          padding: 1%;
           text-align: center;
-          color: #03105c; }
+          color: #03105c;
+          max-height: 65vh; }
           body .background .projects-frame .project .project-figcaption,
           html .background .projects-frame .project .project-figcaption {
             position: relative;
+            font-size: 1.5em;
             text-align: center;
-            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 22px;
+            margin-bottom: 3%;
             background: #008080;
-            height: 8vh;
             opacity: 0;
-            z-index: 2; }
+            z-index: 2;
+            height: 8vh; }
           body .background .projects-frame .project .project-picture,
           html .background .projects-frame .project .project-picture {
             position: relative;
-            max-width: 55vw;
+            max-width: 70%;
             opacity: 0;
             z-index: 1; } }
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
-      background: linear-gradient(68deg, red, red, lime, blue);
-      padding: 3vw; }
+      background: linear-gradient(68deg, red, lime, red, blue);
+      padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
         display: flex;
@@ -86,12 +87,12 @@ html {
         body .background .draws-and-person-frames .personal-frame,
         html .background .draws-and-person-frames .personal-frame {
           background: linear-gradient(-45deg, black, white);
-          width: 50%;
+          width: 70%;
+          height: 90%;
           border-radius: 10%;
-          margin-bottom: 10%;
+          font-size: 2em;
           text-align: center;
-          color: red;
-          font-size: 2em; }
+          color: red; }
         body .background .draws-and-person-frames .personal-frame-fade-out,
         html .background .draws-and-person-frames .personal-frame-fade-out {
           animation-name: personal-frame-fade-out;
@@ -100,11 +101,12 @@ html {
         body .background .draws-and-person-frames .personal-frame-fade-in,
         html .background .draws-and-person-frames .personal-frame-fade-in {
           animation-name: personal-frame-fade-in;
-          animation-duration: 2000ms;
+          animation-duration: 2500ms;
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
         background: linear-gradient(68deg, transparent, transparent, transparent, white, transparent, transparent);
+        margin-top: 5%;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -112,29 +114,28 @@ html {
         body .background .projects-frame .project,
         html .background .projects-frame .project {
           background: #c0c0c0;
-          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
+          box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
           border-radius: 5%;
-          margin: 7%;
-          padding: 3%;
-          width: 70%;
+          margin: 8%;
+          padding: 1%;
           text-align: center;
-          color: red;
-          max-height: 90vh; }
+          color: #03105c;
+          max-height: 80vh; }
           body .background .projects-frame .project .project-figcaption,
           html .background .projects-frame .project .project-figcaption {
             position: relative;
-            text-align: center;
             font-size: 1.5em;
+            text-align: center;
             font-weight: bold;
             margin-bottom: 3%;
-            height: 10vh;
             background: #008080;
             opacity: 0;
-            z-index: 2; }
+            z-index: 2;
+            height: 10vh; }
           body .background .projects-frame .project .project-picture,
           html .background .projects-frame .project .project-picture {
             position: relative;
-            max-width: 80%;
+            max-width: 70%;
             opacity: 0;
             z-index: 1; } }
   body .project-figcaption-animation,
@@ -152,16 +153,6 @@ html {
   100% {
     transform: rotate3d(0, 0, 0, 0turn);
     opacity: 1; } }
-@keyframes personal-frame-fade-in {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-@keyframes personal-frame-fade-out {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
   body .project-picture-animation,
   html .project-picture-animation {
     animation-name: slide-in;
@@ -180,5 +171,15 @@ html {
   100% {
     transform: translate(0, 0);
     opacity: 1; } }
+@keyframes personal-frame-fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes personal-frame-fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 /*# sourceMappingURL=portfolio.css.map */

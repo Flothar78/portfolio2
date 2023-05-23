@@ -5,7 +5,7 @@ html {
   @media screen and (min-width: 900px) and (max-width: 1399px) {
     body .background,
     html .background {
-      background: linear-gradient(82deg, blue, lime, red);
+      background: linear-gradient(68deg, red, red, lime, blue);
       padding: 3%; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -37,7 +37,7 @@ html {
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
-        background: linear-gradient(82deg, transparent, white, transparent, transparent);
+        background: linear-gradient(68deg, transparent, transparent, transparent, white, transparent, transparent);
         margin-top: 5%;
         display: flex;
         flex-direction: column;
@@ -45,13 +45,13 @@ html {
         border-radius: 27px; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
-          background: purple;
-          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
+          background: #c0c0c0;
+          box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
           border-radius: 5%;
           margin: 8%;
           padding: 8%;
           text-align: center;
-          color: #ee0505; }
+          color: #03105c; }
           body .background .projects-frame .project .project-figcaption,
           html .background .projects-frame .project .project-figcaption {
             position: relative;
@@ -59,7 +59,7 @@ html {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 22px;
-            background: #1900ff;
+            background: #008080;
             height: 8vh;
             opacity: 0;
             z-index: 2; }
@@ -72,7 +72,7 @@ html {
   @media screen and (min-width: 1400px) {
     body .background,
     html .background {
-      background: linear-gradient(82deg, blue, lime, red);
+      background: linear-gradient(68deg, red, red, lime, blue);
       padding: 3vw; }
       body .background .draws-and-person-frames,
       html .background .draws-and-person-frames {
@@ -104,14 +104,14 @@ html {
           animation-fill-mode: forwards; }
       body .background .projects-frame,
       html .background .projects-frame {
-        background: linear-gradient(82deg, transparent, white, transparent, transparent);
+        background: linear-gradient(68deg, transparent, transparent, transparent, white, transparent, transparent);
         display: flex;
         flex-direction: column;
         text-align: center;
         border-radius: 43px; }
         body .background .projects-frame .project,
         html .background .projects-frame .project {
-          background: purple;
+          background: #c0c0c0;
           box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
           border-radius: 5%;
           margin: 7%;
@@ -128,7 +128,7 @@ html {
             font-weight: bold;
             margin-bottom: 3%;
             height: 10vh;
-            background: #1900ff;
+            background: #008080;
             opacity: 0;
             z-index: 2; }
           body .background .projects-frame .project .project-picture,

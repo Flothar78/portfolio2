@@ -1,16 +1,18 @@
 body,
 html {
-  $background: linear-gradient(82deg, blue, lime, red);
+  $background: linear-gradient(68deg, red, red, lime, blue);
   $personal-frame-bg: linear-gradient(-45deg, black, white);
   $project-frame-bg: linear-gradient(
-    82deg,
+    68deg,
+    transparent,
+    transparent,
     transparent,
     white,
     transparent,
     transparent
   );
-  $project-bg: purple;
-  $project-figcaption-bg: rgb(25, 0, 255);
+  $project-bg: #c0c0c0;
+  $project-figcaption-bg: #008080;
   height: 100%;
   margin: 0;
 
@@ -55,12 +57,12 @@ html {
         border-radius: 27px;
         .project {
           background: $project-bg;
-          box-shadow: 1.2em 3em 2em rgba(128, 128, 128, 0.614);
+          box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
           border-radius: 5%;
           margin: 8%;
           padding: 8%;
           text-align: center;
-          color: rgb(238, 5, 5);
+          color: rgb(3, 16, 92);
           .project-figcaption {
             position: relative;
             text-align: center;

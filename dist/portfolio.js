@@ -7,9 +7,7 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}
-// { rootMargin: "-250px" }
-);
+});
 pictures.forEach((picture) => {
     observer.observe(picture);
 });

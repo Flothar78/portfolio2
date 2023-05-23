@@ -4,13 +4,16 @@ html {
   margin: 0; }
 
 .draws-and-person-frames {
+  border: 3px solid blue;
   display: flex;
   justify-content: space-around;
   height: 100vh; }
   .draws-and-person-frames .draws-frame {
+    border: 1px solid yellow;
     font-size: 2em;
     color: red; }
   .draws-and-person-frames .personal-frame {
+    border: 1px solid red;
     background: linear-gradient(-45deg, black, white);
     width: 70%;
     height: 90%;
@@ -39,41 +42,50 @@ html {
   text-align: center; }
   .projects-frame .project {
     background: #c0c0c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 79vh;
     box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
     border-radius: 5%;
     margin: 8%;
-    padding: 1%;
     text-align: center;
     color: #03105c; }
     .projects-frame .project .project-figcaption {
       position: relative;
+      background: #008080;
       font-size: 1.5em;
       text-align: center;
       font-weight: bold;
       margin-bottom: 3%;
-      background: #008080;
       opacity: 0;
       z-index: 2; }
     .projects-frame .project .project-picture {
       position: relative;
-      max-width: 70%;
+      width: 75%;
       opacity: 0;
       z-index: 1; }
 
-@media screen and (min-width: 900px) and (max-width: 1400px) {
+@media screen and (min-width: 992px) and (max-width: 1400px) {
   .projects-frame {
     border-radius: 27px; }
-    .projects-frame .project {
-      max-height: 65vh; }
-      .projects-frame .project .project-figcaption {
-        height: 8vh; } }
+    .projects-frame .project .project-figcaption {
+      height: 8vh;
+      width: 85%;
+      margin: auto;
+      margin-bottom: 5%; }
+    .projects-frame .project .project-picture {
+      width: 75%; } }
 @media screen and (min-width: 1400px) {
   .projects-frame {
     border-radius: 43px; }
-    .projects-frame .project {
-      max-height: 80vh; }
-      .projects-frame .project .project-figcaption {
-        height: 10vh; } }
+    .projects-frame .project .project-figcaption {
+      height: 7vh;
+      width: 75%;
+      margin: auto; }
+    .projects-frame .project .project-picture {
+      width: 65%;
+      margin-top: 3%; } }
 .project-figcaption-animation {
   animation-name: rotate-title;
   animation-duration: 1200ms;

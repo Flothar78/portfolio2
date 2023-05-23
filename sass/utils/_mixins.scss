@@ -3,15 +3,18 @@
   padding: 3%;
 }
 @mixin draws-and-person-frames {
+  border: 3px solid blue;
   display: flex;
   justify-content: space-around;
   height: 100vh;
 }
 @mixin draws-frame {
+  border: 1px solid yellow;
   font-size: 2em;
   color: red;
 }
 @mixin personal-frame {
+  border: 1px solid red;
   background: $personal-frame-bg;
   width: 70%;
   height: 90%;
@@ -39,26 +42,31 @@
 }
 @mixin project {
   background: $project-bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 79vh;
   box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
   border-radius: 5%;
   margin: 8%;
-  padding: 1%;
   text-align: center;
   color: rgb(3, 16, 92);
 }
 @mixin project-figcaption {
   position: relative;
+  
+  background: $project-figcaption-bg;
   font-size: 1.5em;
   text-align: center;
   font-weight: bold;
   margin-bottom: 3%;
-  background: $project-figcaption-bg;
   opacity: 0;
   z-index: 2;
 }
 @mixin project-picture {
   position: relative;
-  max-width: 70%;
+  width: 75%;
   opacity: 0;
   z-index: 1;
 }

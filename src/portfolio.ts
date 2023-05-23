@@ -11,7 +11,6 @@ const observer = new IntersectionObserver(
       }
     });
   }
-  // { rootMargin: "-250px" }
 );
 pictures.forEach((picture) => {
   observer.observe(picture);

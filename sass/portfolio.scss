@@ -1,211 +1,87 @@
-body,
-html {
-  $background: linear-gradient(68deg, red, lime, red, blue);
-  $personal-frame-bg: linear-gradient(-45deg, black, white);
-  $project-frame-bg: linear-gradient(
-    68deg,
-    transparent,
-    transparent,
-    transparent,
-    white,
-    transparent,
-    transparent
-  );
-  $project-bg: #c0c0c0;
-  $project-figcaption-bg: #008080;
-  height: 100%;
-  margin: 0;
-  @mixin background {
-    background: $background;
-    padding: 3%;
-  }
-  @mixin draws-and-person-frames {
-    display: flex;
-    justify-content: space-around;
-    height: 100vh;
-  }
-  @mixin draws-frame {
-    font-size: 2em;
-    color: red;
-  }
-  @mixin personal-frame {
-    background: $personal-frame-bg;
-    width: 70%;
-    height: 90%;
-    border-radius: 10%;
-    font-size: 2em;
-    text-align: center;
-    color: red;
-  }
-  @mixin personal-frame-fade-out {
-    animation-name: personal-frame-fade-out;
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-  }
-  @mixin personal-frame-fade-in {
-    animation-name: personal-frame-fade-in;
-    animation-duration: 2500ms;
-    animation-fill-mode: forwards;
-  }
-  @mixin projects-frame {
-    background: $project-frame-bg;
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  @mixin project {
-    background: $project-bg;
-    box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
-    border-radius: 5%;
-    margin: 8%;
-    padding: 1%;
-    text-align: center;
-    color: rgb(3, 16, 92);
-  }
-  @mixin project-figcaption {
-    position: relative;
-    font-size: 1.5em;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 3%;
-    background: $project-figcaption-bg;
-    opacity: 0;
-    z-index: 2;
-  }
-  @mixin project-picture {
-    position: relative;
-    max-width: 70%;
-    opacity: 0;
-    z-index: 1;
-  }
-  @media screen and (min-width: 900px) and (max-width: 1400px) {
-    .background {
-      @include background;
-      .draws-and-person-frames {
-        @include draws-and-person-frames;
-        .draws-frame {
-          @include draws-frame;
-        }
-        .personal-frame {
-          @include personal-frame;
-        }
-        .personal-frame-fade-out {
-          @include personal-frame-fade-out;
-        }
-        .personal-frame-fade-in {
-          @include personal-frame-fade-in;
-        }
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/reset-css";
+@import "./layout/draws-and-person-frames";
+@import "./layout/background-color";
+@import "./layout/projects-frame";
+@media screen and (min-width: 900px) and (max-width: 1400px) {
+  .projects-frame {
+    border-radius: 27px;
+    .project {
+      max-height: 65vh;
+      .project-figcaption {
+        height: 8vh;
       }
-      .projects-frame {
-        @include projects-frame;
-        border-radius: 27px;
-        .project {
-          @include project;
-          max-height: 65vh;
-          .project-figcaption {
-            @include project-figcaption;
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .projects-frame {
+    border-radius: 43px;
+    .project {
+      max-height: 80vh;
+      .project-figcaption {
+        height: 10vh;
+      }
+    }
+  }
+}
+.project-figcaption-animation {
+  animation-name: rotate-title;
+  animation-duration: 1200ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes rotate-title {
+  0% {
+    opacity: 0;
+    transform: rotate3d(2, 0, -1, -0.4turn);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, -0turn);
+    opacity: 1;
+  }
+}
 
-            height: 8vh;
-          }
-          .project-picture {
-            @include project-picture;
-          }
-        }
-      }
-    }
+.project-picture-animation {
+  animation-name: slide-in;
+  animation-delay: 600ms;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
   }
-  @media screen and (min-width: 1400px) {
-    .background {
-      @include background;
-      .draws-and-person-frames {
-        @include draws-and-person-frames;
-        .draws-frame {
-          @include draws-frame;
-        }
-        .personal-frame {
-          @include personal-frame;
-        }
-        .personal-frame-fade-out {
-          @include personal-frame-fade-out;
-        }
-        .personal-frame-fade-in {
-          @include personal-frame-fade-in;
-        }
-      }
-      .projects-frame {
-        @include projects-frame;
-        border-radius: 43px;
-        .project {
-          @include project;
-          max-height: 80vh;
-          .project-figcaption {
-            @include project-figcaption;
-            height: 10vh;
-          }
-          .project-picture {
-            @include project-picture;
-          }
-        }
-      }
-    }
+  1% {
+    transform: translate(100%, 0);
+    opacity: 0.1;
   }
-  .project-figcaption-animation {
-    animation-name: rotate-title;
-    animation-duration: 1200ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+  95% {
+    opacity: 0.9;
   }
-  @keyframes rotate-title {
-    0% {
-      opacity: 0;
-      transform: rotate3d(2, 0, -1, -0.4turn);
-    }
-    1% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate3d(0, 0, 0, -0turn);
-      opacity: 1;
-    }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
   }
-  .project-picture-animation {
-    animation-name: slide-in;
-    animation-delay: 600ms;
-    animation-duration: 1500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.16, 0.79, 0, 1.03);
+}
+@keyframes personal-frame-fade-in {
+  0% {
+    opacity: 0;
   }
-  @keyframes slide-in {
-    0% {
-      opacity: 0;
-    }
-    1% {
-      transform: translate(100%, 0);
-      opacity: 0.1;
-    }
-    95% {
-      opacity: 0.9;
-    }
-    100% {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
-  @keyframes personal-frame-fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+@keyframes personal-frame-fade-out {
+  0% {
+    opacity: 1;
   }
-  @keyframes personal-frame-fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  100% {
+    opacity: 0;
   }
 }

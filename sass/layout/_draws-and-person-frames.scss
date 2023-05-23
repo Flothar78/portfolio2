@@ -1,0 +1,15 @@
+.draws-and-person-frames {
+  @include draws-and-person-frames;
+  .draws-frame {
+    @include draws-frame;
+  }
+  .personal-frame {
+    @include personal-frame;
+  }
+  .personal-frame-fade-out {
+    @include personal-frame-fade-out;
+  }
+  .personal-frame-fade-in {
+    @include personal-frame-fade-in;
+  }
+}

@@ -1,0 +1,14 @@
+.projects-frame {
+  @include projects-frame;
+
+  .project {
+    @include project;
+
+    .project-figcaption {
+      @include project-figcaption;
+    }
+    .project-picture {
+      @include project-picture;
+    }
+  }
+}

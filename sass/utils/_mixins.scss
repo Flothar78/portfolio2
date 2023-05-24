@@ -1,3 +1,7 @@
+:root {
+  --height: 62vh;
+}
+
 @mixin background {
   background: $background;
   padding: 3%;
@@ -39,14 +43,14 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  border-radius: 43px;
 }
 @mixin project {
   background: $project-bg;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  min-height: 79vh;
+  padding: 3% 0;
   box-shadow: 2em 3em 2em rgba(2, 2, 119, 0.614);
   border-radius: 5%;
   margin: 8%;
@@ -55,18 +59,22 @@
 }
 @mixin project-figcaption {
   position: relative;
-  
+  height: calc(var(--height) / 5);
   background: $project-figcaption-bg;
   font-size: 1.5em;
+  width: 85%;
   text-align: center;
   font-weight: bold;
-  margin-bottom: 3%;
+  margin: auto;
   opacity: 0;
   z-index: 2;
 }
 @mixin project-picture {
   position: relative;
+  object-fit: cover;
   width: 75%;
+  height: var(--height);
+  margin-top: 3%;
   opacity: 0;
   z-index: 1;
 }

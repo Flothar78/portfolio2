@@ -4,37 +4,9 @@
 @import "./layout/draws-and-person-frames";
 @import "./layout/background-color";
 @import "./layout/projects-frame";
-@media screen and (min-width: 992px) and (max-width: 1400px) {
-  .projects-frame {
-    border-radius: 27px;
-    .project {
-      .project-figcaption {
-        height: 8vh;
-        width: 85%;
-        margin: auto;
-        margin-bottom: 5%;
-      }
-      .project-picture {
-        width: 75%;
-      }
-    }
-  }
+@media screen and (min-width: 992px) and (max-width: 1200px) {
 }
-@media screen and (min-width: 1400px) {
-  .projects-frame {
-    border-radius: 43px;
-    .project {
-      .project-figcaption {
-        height: 7vh;
-        width: 75%;
-        margin: auto;
-      }
-      .project-picture {
-        width: 65%;
-        margin-top: 3%;
-      }
-    }
-  }
+@media screen and (min-width: 1200px) {
 }
 .project-figcaption-animation {
   animation-name: rotate-title;

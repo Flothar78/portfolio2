@@ -23,7 +23,7 @@ html {
     border-radius: 10%;
     font-size: 2em;
     text-align: center;
-    color: red; }
+    color: black; }
   .draws-and-person-frames .personal-frame-fade-out {
     animation-name: personal-frame-fade-out;
     animation-duration: 1000ms;
@@ -34,7 +34,7 @@ html {
     animation-fill-mode: forwards; }
 
 .background {
-  background: linear-gradient(68deg, red, lime, red, blue);
+  background: linear-gradient(68deg, red, lime, blue, red);
   padding: 3%; }
 
 .projects-frame {
@@ -45,7 +45,7 @@ html {
   text-align: center;
   border-radius: 43px; }
   .projects-frame .project {
-    background: #c0c0c0;
+    background: #cb872e;
     display: flex;
     flex-direction: column;
     justify-content: center;
